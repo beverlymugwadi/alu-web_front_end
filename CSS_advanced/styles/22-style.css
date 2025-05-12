@@ -1,0 +1,83 @@
+/* Universal box-sizing rule */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Normalize styles (based on necolas' normalize.css) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+/* Define CSS variables on root */
+:root {
+  --color-primary: #d73953;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3;
+  --color-dark-grey: #353535;
+  --text-color: var(--color-black);
+
+  --font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-title: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --font-size-small: 1.2rem;
+  --font-size-medium: 1.6rem;
+  --font-size-large: 1.8rem;
+  --font-size-x-large: 2.3rem;
+  --font-size-xx-large: 4.8rem;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --line-height-small: 1.2;
+  --line-height-base: 1.5;
+  --line-height-big: 1.8;
+
+  /* Custom properties for grid styling */
+  --section-tagline-margin: 0;
+  --section-padding: 5rem 0;
+  --col-padding: 0.5rem;
+}
+
+/* Section tagline styling */
+.section-tagline {
+  margin: var(--section-tagline-margin);
+}
+
+/* Row (unordered list) styling */
+ul.row {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Simplified selector for all col- classes */
+[class^="col-"] {
+  float: left;
+  padding: var(--col-padding);
+}
+
+/* Footer copyright styling */
+.footer-copyright {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+}
+
+/* Footer unordered list styling */
+footer ul {
+  text-align: right;
+}
+
+/* New CSS rule for clearing the grid context */
+.row + .row {
+  clear: both;
+  display: table;
+}
+
+/* Dark theme styles for sections */
+[data-section-theme="dark"] {
+  --text-color: var(--color-white);
+  --section-title-color: var(--color-white);
+  background-color: var(--color-black);
+}
